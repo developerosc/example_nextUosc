@@ -1,25 +1,70 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hola_mundo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hola" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUy-L6-8Ju">
+                                <rect key="frame" x="20" y="242" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-k0-9Lx">
+                                <rect key="frame" x="163" y="280" width="48" height="30"/>
+                                <state key="normal" title="Aplicar"/>
+                                <connections>
+                                    <action selector="ChangeMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EkG-w6-Kvs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ingresa tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8V1-S2-aGY">
+                                <rect key="frame" x="20" y="184" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ugv-k0-9Lx" firstAttribute="top" secondItem="8V1-S2-aGY" secondAttribute="bottom" constant="17" id="5gQ-pX-W3Y"/>
+                            <constraint firstItem="GUy-L6-8Ju" firstAttribute="top" secondItem="8V1-S2-aGY" secondAttribute="bottom" constant="28" id="9YA-rp-I69"/>
+                            <constraint firstItem="Ugv-k0-9Lx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CXl-bC-6uR"/>
+                            <constraint firstItem="8V1-S2-aGY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Chi-ke-EHM"/>
+                            <constraint firstItem="8V1-S2-aGY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VyE-AS-MUC"/>
+                            <constraint firstItem="Ugv-k0-9Lx" firstAttribute="leading" secondItem="GUy-L6-8Ju" secondAttribute="leading" id="jWo-dW-zFh"/>
+                            <constraint firstItem="GUy-L6-8Ju" firstAttribute="leading" secondItem="8V1-S2-aGY" secondAttribute="leading" id="pYT-aR-CaH"/>
+                            <constraint firstItem="Ugv-k0-9Lx" firstAttribute="top" secondItem="GUy-L6-8Ju" secondAttribute="bottom" constant="18" id="tKX-Qt-XP5"/>
+                            <constraint firstItem="Ugv-k0-9Lx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yVp-Lr-5By"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Chi-ke-EHM"/>
+                                <exclude reference="VyE-AS-MUC"/>
+                                <exclude reference="5gQ-pX-W3Y"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="GUy-L6-8Ju" id="NCG-Hb-ZYF"/>
+                        <outlet property="nameTextField" destination="8V1-S2-aGY" id="aDg-OR-f2J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.5" y="136.5"/>
         </scene>
     </scenes>
 </document>
